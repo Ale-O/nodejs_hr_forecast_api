@@ -6,7 +6,7 @@ module.exports = (sequelize, Sequelize) => {
     rank: {
       type: Sequelize.STRING
     },
-    published: {
+    activated: {
       type: Sequelize.BOOLEAN
     },
     availability_date: {

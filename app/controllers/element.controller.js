@@ -16,7 +16,7 @@ exports.create = (req, res) => {
   const element = {
     username: req.body.username,
     rank: req.body.rank,
-    published: req.body.published ? req.body.published : false,
+    activated: req.body.activated ? req.body.activated : false,
     availability_date: req.body.availability_date,
     end_date: req.body.end_date,
     budget_line: req.body.budget_line
@@ -140,9 +140,9 @@ exports.deleteAll = (req, res) => {
     });
 };
 
-// Function finded all published Element
+// Function finded all activated Element
 exports.findAllActivated = (req, res) => {
-  Element.findAll({ where: { published: true } })
+  Element.findAll({ where: { activated: true } })
     .then(data => {
       res.send(data);
     })

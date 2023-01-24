@@ -9,8 +9,8 @@ module.exports = app => {
   // Retrieve all Elements
   router.get("/", elements.findAll);
 
-  // Retrieve all published Elements
-  router.get("/published", elements.findAllActivated);
+  // Retrieve all activated Elements
+  router.get("/activated", elements.findAllActivated);
 
   // Retrieve a single Element with id
   router.get("/:id", elements.findOne);
