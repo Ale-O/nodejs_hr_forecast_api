@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 // Function created and Saved a new Element
 exports.create = (req, res) => {
   // Validation request
-  if (!req.body.title) {
+  if (!req.body.username) {
     res.status(400).send({
       message: "This content can not be empty"
     });
@@ -14,11 +14,12 @@ exports.create = (req, res) => {
 
   // Function created a Element
   const element = {
-    title: req.body.title,
-    description: req.body.description,
+    username: req.body.username,
+    rank: req.body.rank,
     published: req.body.published ? req.body.published : false,
-    field4: req.body.field4,
-    field5: req.body.field5
+    availability_date: req.body.availability_date,
+    end_date: req.body.end_date,
+    budget_line: req.body.budget_line
   };
 
   // Function saved this Element in the database
@@ -36,8 +37,8 @@ exports.create = (req, res) => {
 
 // Function retrieved all Elements from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+  const username = req.query.username;
+  var condition = username ? { username: { [Op.like]: `%${username}%` } } : null;
 
   Element.findAll({ where: condition })
     .then(data => {

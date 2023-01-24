@@ -1,18 +1,21 @@
 module.exports = (sequelize, Sequelize) => {
   const Element = sequelize.define("element", {
-    title: {
+    username: {
       type: Sequelize.STRING
     },
-    description: {
+    rank: {
       type: Sequelize.STRING
     },
     published: {
       type: Sequelize.BOOLEAN
     },
-    field4: {
-      type: Sequelize.STRING
+    availability_date: {
+      type: Sequelize.DATE
     },
-    field5: {
+    end_date: {
+      type: Sequelize.DATE
+    },
+    budget_line: {
       type: Sequelize.STRING
     }
   });
