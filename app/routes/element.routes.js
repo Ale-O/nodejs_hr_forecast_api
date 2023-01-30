@@ -13,7 +13,7 @@ module.exports = app => {
   router.get("/activated", elements.findAllActivated);
 
   // Product forecast since database
-  router.get("/puph", elements.productForecast);
+  router.get("/forecasts", elements.productForecast);
 
   // Retrieve a single Element with id
   router.get("/:id", elements.findOne);
