@@ -153,8 +153,8 @@ exports.findAllActivated = (req, res) => {
     })
 }
 
-// Function producted forecast since database
-exports.productForecast = async (req, res) => {
+// Function produced forecast since database
+exports.produceForecast = async (req, res) => {
   let ranks_A = await Element.findAll({
     where: { rank: 'rank_A', activated: true }
   })
